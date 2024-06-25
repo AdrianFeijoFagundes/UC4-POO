@@ -1,0 +1,13 @@
+classe -> modelo 
+
+npm install -g typescript
+npm init
+
+npx tsc index.ts
+
+
+NUMBER E STRING - tipagens genéricas
+INT e FLOAT - tipagem Númerica Primitiva
+STRING, CHAR, VARCHAR - tipagens primitivas de texto
+
+
