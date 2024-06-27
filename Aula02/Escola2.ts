@@ -19,7 +19,7 @@ class Professor {
         `
     }
 
-    setProfessor(): void{
+    setProfessor(): void {
         let nomeUp = readLineSync.question('Qual o nome do professor? ')
         let idadeUp = readLineSync.questionInt('Qual a idade de professor? ')
         let ano_xp = readLineSync.questionInt('Quantos anos de experiencia ele tem? ')
@@ -65,14 +65,42 @@ class Escola {
 const databaseProfessores : Array<Professor> = []
 const databaseEscolas : Array<Escola> = []
 
+function visualizarProfessores(professores : Array<Professor> ) : void {
+    for (let i = 0; i < professores.length; i++) {
+        console.log('Código: ', i + 1)
+        console.log(professores[i])
+    }
+}
+function visualizarEscolas(escolas : Array<Escola> ) : void {
+    for (let i = 0; i < escolas.length; i++) {
+        console.log('Código: ', i + 1)
+        console.log(escolas[i])
+    }
+}
 function selecionarProfessor(professores : Array<Professor> ) : number {
     console.log('Escolha um professor pelo código')
-    for (let i = 0; i < professores.length; i++) {
-        console.log(`Código ${i + 1} | ${professores[i].nome} | ${professores[i].idade} | ${professores[i].ano_xp}`)
-    }
+    visualizarProfessores(professores)
     return readLineSync.questionInt('Qual professor voce escolhe (digite o código dele) ?') - 1
 }
-
+function selecionarEscola(escolas : Array<Escola> ) : number {
+    console.log('Escolha uma escola pelo código')
+    visualizarEscolas(escolas)
+    return readLineSync.questionInt('Qual escola voce escolhe (digite o código dele) ?') - 1
+}
+function verificarTamanhoArrayEscola() : boolean {
+    if (databaseEscolas.length > 0) {
+        console.log('Nenhum Professor criado') 
+        return true    
+    }
+    return false
+}
+function verificarTamanhoArrayProfessores() : boolean {
+    if (databaseProfessores.length > 0) {
+        console.log('Nenhum Professor criado') 
+        return true    
+    }
+    return false
+}
 let value : boolean = true
 while (value) {
     console.log(`
@@ -93,31 +121,47 @@ while (value) {
             let idade = readLineSync.questionInt('Qual a idade de professor? ')
             let ano_xp = readLineSync.questionInt('Quantos anos de experiencia ele tem? ')
 
-            const novoProfessor = new Professor(nome, idade, ano_xp)
+            const novoProfessor : Professor = new Professor(nome, idade, ano_xp)
             databaseProfessores.push(novoProfessor)
             break
         case 2:
+            if (verificarTamanhoArrayProfessores()) break
+            
             const nomeEscola = readLineSync.question('Qual o nome da escola? ')
             const endEscola = readLineSync.question('Qual o endereco da escola? ')
             const numEscola = readLineSync.questionInt('Qual o numero da escola? ')
 
-            const indexEscolhido = selecionarProfessor(databaseProfessores)
-            const professor = databaseProfessores[indexEscolhido]
+            const indexEscolhido : number = selecionarProfessor(databaseProfessores)
+            const professor : Professor = databaseProfessores[indexEscolhido]
 
-            const novaEscola = new Escola(nomeEscola, professor, endEscola, numEscola)
+            const novaEscola : Escola = new Escola(nomeEscola, professor, endEscola, numEscola)
             databaseEscolas.push(novaEscola)
             break
+
         case 3:
-            console.log(databaseProfessores[0].setProfessor())
+            if (verificarTamanhoArrayProfessores()) break
+
+            const index : number  = selecionarProfessor(databaseProfessores)
+            const professorUpdate : Professor = databaseProfessores[index]
+            professorUpdate.setProfessor()
             break
-            case 4:
-            console.log(databaseEscolas[0].setEscola())
+
+        case 4:
+            if (verificarTamanhoArrayEscola()) break
+
+            const indexEscola : number = selecionarEscola(databaseEscolas)
+            const escolaUpdate : Escola = databaseEscolas[indexEscola]
+            escolaUpdate.setEscola()
             break
         case 5:
-            console.log(databaseProfessores[0].getProfessor())
+            if (verificarTamanhoArrayProfessores()) break
+
+            visualizarProfessores(databaseProfessores)
             break
         case 6:
-            console.log(databaseEscolas[0].getEscola())
+            if (verificarTamanhoArrayEscola()) break
+            
+            visualizarEscolas(databaseEscolas)
             break
         case 7:
             console.log('Encerrando programa')
@@ -130,5 +174,7 @@ while (value) {
         } else {
             value = false
         }
-    }  
+    }
+    
+    console.clear()
 }
