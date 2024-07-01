@@ -1,19 +1,17 @@
 {
-  "name": "12062024",
+  "name": "typescript",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
-    "start": "npx tsc index.ts & node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Adrian",
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "readline-sync": "^1.4.10",
-    "typescript": "^5.4.5"
+    "readline-sync": "^1.4.10"
   },
   "devDependencies": {
-    "@types/node": "^20.14.2"
+    "@types/readline-sync": "^1.4.8"
   }
 }
