@@ -101,3 +101,6 @@ biblioteca.adicionarJogo(jogo3);
 biblioteca.adicionarJogo(jogo4);
 
 console.log(biblioteca.listarJogos());
+console.log("remover minecraft")
+biblioteca.removerJogo('Minecraft')
+console.log(biblioteca.listarJogos());
