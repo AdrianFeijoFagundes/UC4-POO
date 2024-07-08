@@ -76,6 +76,11 @@ class BibliotecaDeJogos {
                 break; // Importante para interromper após encontrar o jogo a ser removido
             }
         }
+        // Poderia ser usado um algoritmo de ordenação por titulo, uma busca por titulo, e uma remoçao do titulo
+        /*
+            console.log(this.jogos)
+            this.jogos = this.jogos.filter(objJogo => objJogo.getTitulo !== title)
+        */
     }
 
     public listarJogos(): string {

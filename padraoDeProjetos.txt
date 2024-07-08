@@ -1,0 +1,12 @@
+exportando uma classe:
+
+    export class NomeClasse {
+
+    }
+
+importando uma classe:
+
+    import {NomeClasse} from "./NomeClasse";
+
+
+Interface -> Contrato
