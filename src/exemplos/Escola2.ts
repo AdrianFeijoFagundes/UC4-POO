@@ -1,4 +1,4 @@
-import * as readLineSync from 'readline-sync'
+import * as readLineSync from 'readline-sync';
 
 class Professor {
     nome: string
