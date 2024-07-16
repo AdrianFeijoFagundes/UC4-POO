@@ -18,6 +18,7 @@ export class Carro {
             console.log("Gasolina insufiente para percorrer essa distancia")
             return;
         }
+        
         this.gasolina -= gasto; 
         
     }
