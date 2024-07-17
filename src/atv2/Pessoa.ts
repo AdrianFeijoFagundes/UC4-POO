@@ -26,6 +26,16 @@ export class Pessoa {
         this.data_de_nascimento = [ano, mes, dia]
     }
 
+    getPessoa(): string {
+        return `
+        Nome completo: ${this.nome} ${this.sobrenome}
+        Nome da mãe: ${this.nome_da_mae}
+        Nome do pai: ${this.nome_do_pai}
+        RG: ${this.numero_rg}
+        CPF: ${this.numero_cpf}
+        Data de nascimento: ${this.data_de_nascimento[2]}/${this.data_de_nascimento[1]}/${this.data_de_nascimento[0]}
+        `
+    }
     calcularIdade(): void  {
         let date = new Date()
         let year = date.getFullYear()
@@ -43,12 +53,12 @@ export class Pessoa {
         
         
         let diferencaAno = year - this.data_de_nascimento[0]
-
-        if ((diferencaAno > 18) || (diferencaAno === 18 && fezAniversarioEsseAno)) {
-            
+        console.log(diferencaAno)
+        console.log(fezAniversarioEsseAno)
+        if (diferencaAno > 18 || fezAniversarioEsseAno) {
+            console.log('Não é necessário responsável')
+        } else {
             console.log(`É necessário que seu pai ${this.nome_do_pai} ou sua mâe ${this.nome_da_mae} esteja presente`)
-            return
         }
-        console.log('Não é necessário responsável')
     }
 }           
