@@ -1,0 +1,24 @@
+CRIANDO CHAT EM TEMPO REAL:
+
+WEB SOCKET 
+
+COMUNICAÇÃO BIDIRECIONAL EM TEMPO REAL
+
+BACKEND
+
+	SERVIDOR EM NODE.JS
+	
+	npm init -y
+	npm install ws	// biblioteca do websocket
+	npm i dotenv
+
+	script de desenvolvimento	
+		node --watch src/server.js	
+
+
+	variáveis de ambiente
+	.env
+	PORT=8080
+
+
+FRONTEND
