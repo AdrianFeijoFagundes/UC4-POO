@@ -1,0 +1,18 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Data_1 = require("./Data");
+var Voo_1 = require("./Voo");
+var voo = new Voo_1.Voo('01', new Data_1.Data(1, 12, 2002));
+voo.ocupa(100);
+voo.ocupa(87);
+voo.ocupa(11);
+voo.ocupa(1);
+console.log(voo);
+console.log('------');
+console.log(voo.verifica(99));
+console.log('------');
+console.log(voo.verifica(1));
+console.log('------');
+console.log(voo.vagas());
+console.log('------');
+console.log(voo.proximoLivre());
