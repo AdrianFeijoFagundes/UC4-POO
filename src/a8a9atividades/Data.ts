@@ -1,5 +1,5 @@
 export interface Data {
-    //constructor(dia: number, mes: number, ano: number);
+    // constructor(dia: number, mes: number, ano: number);
     compara(outraData: Data): number;
     getDia(): number;
     getMes(): number;

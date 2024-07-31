@@ -30,6 +30,8 @@ interface Data {
     getAno(): number;
     isBissexto(): boolean;
     clone(): Data;
+
+    return new Data(this.dia, this.mes, this.ano)
 }
 ```
 
@@ -70,3 +72,20 @@ interface Prova {
     maior(outraProva: Prova): number;
 }
 ```
+
+
+Como posso fazer a questão 4?
+
+    opções de cada questão A, B, C, D, E
+
+    valores necessários para calcular a pontuação: 
+    média: ((pontos obtidos nas primeiras 10 questões + pontos obtidos nas 5 ultimas questões) / pontuação maxima possivel) * 10(média de 1 a 10)
+
+    pontuando:
+        gabarito // array de objetos, cada objeto vai implementar { respostacorreta, peso }
+        respostas do aluno = array
+        respostaAluno // adiciona a resposta do aluno a um array
+    
+        acertos // 
+        nota //
+
