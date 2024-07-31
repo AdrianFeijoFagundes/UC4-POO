@@ -11,20 +11,40 @@ export class Jogo implements Info {
         this.classificacao = classificacaoEtaria;
     }
     public getDetalhes(): string {
-        return `
-            Titulo: ${this.title} 
-            Genero: ${this.genero}
-            Classificação etária: ${this.classificacao}
-        `;
+        try {
+            return `
+                Titulo: ${this.title} 
+                Genero: ${this.genero}
+                Classificação etária: ${this.classificacao}
+            `;
+        } catch (error) {
+            console.log(`getDetalhes apresentou ERRO:${error}`)
+        }
+        return ''
     }
     public getTitle(): string {
-        return this.title;
+        try {
+            return this.title;    
+        } catch (error) {
+            console.log(`getTitulo apresentou ERRO:${error}`)
+        }
+        return ''
     }
     public getGenero(): string {
-        return this.genero;
+        try {
+            return this.genero;
+        } catch (error) {
+            console.log(`getGenero apresentou ERRO:${error}`)
+        }
+        return ''
     }
     public getClassificacao(): number {
-        return this.classificacao;
+        try {
+            return this.classificacao;
+        } catch (error) {
+            console.log(`getClassificação apresentou ERRO:${error}`)
+        }
+        return -1
     }
 }
 
@@ -36,12 +56,17 @@ export class JogoEletronico extends Jogo implements Info {
         this.plataforma = plataforma;   
     }
     public getDetalhes(): string {
-        return `
-            Titulo: ${this.getTitle()} 
-            Genero: ${this.getGenero()}
-            Classificação etária: ${this.getClassificacao}
-            Plataforma: ${this.plataforma}
-        `;
+        try {
+            return `
+                Titulo: ${this.getTitle()} 
+                Genero: ${this.getGenero()}
+                Classificação etária: ${this.getClassificacao}
+                Plataforma: ${this.plataforma}
+            `;
+        } catch (error) {
+            console.log(`getDetalhes apresentou ERRO:${error}`)
+        }
+        return ''
     }
 }
 export class JogoDeTabuleiro extends Jogo implements Info{
@@ -53,11 +78,16 @@ export class JogoDeTabuleiro extends Jogo implements Info{
     }
 
     public getDetalhes(): string {
-        return `
-            Titulo: ${this.getTitle()} 
-            Genero: ${this.getGenero}
-            Classificação etária: ${this.getClassificacao}
-            Número de Jogadores: ${this.numeroDeJogadores}
-        `;
+        try {
+            return `
+                Titulo: ${this.getTitle()} 
+                Genero: ${this.getGenero}
+                Classificação etária: ${this.getClassificacao}
+                Número de Jogadores: ${this.numeroDeJogadores}
+            `;
+        } catch (error) {
+            console.log(`getDetalhes apresentou ERRO:${error}`)
+        }
+        return ''
     }
 }
