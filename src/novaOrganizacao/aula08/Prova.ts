@@ -78,4 +78,14 @@ export class Prova implements Prova {
         }
         return acertos
     }
+
+    public maior(outraProva: Prova): number {
+        if (this.nota() > outraProva.nota()) {
+            console.log("A nota dessa prova é maior")
+            return this.nota()
+        } else {
+            console.log("A nota dessa prova é menor")
+            return this.nota()
+        }
+    }
 }
