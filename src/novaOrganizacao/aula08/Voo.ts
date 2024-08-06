@@ -33,10 +33,10 @@ export class Voo implements Voo {
     }
 
     public proximoLivre(): number {
-        for(let i = 0; i < 101; i++) {
-            if (this.cadeiras[i] !== i+1) {
-                console.log(`O assento ${i+1} está livre`)
-                return i+1
+        for(let i = 1; i <= 100; i++) {
+            if (this.cadeiras[i] !== i) {
+                console.log(`O assento ${i} está livre`)
+                return i
             }
         }      
         return -1    

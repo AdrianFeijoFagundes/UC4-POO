@@ -10,12 +10,12 @@ export class EmpresaDev {
     constructor() {
         this.team = []
     }
-    public ():void {
+    public getTeamMethod():void {
 
         for (let developer of this.team) {
-            if (developer instanceof Pleno) developer.criarFeature()
-            if (developer instanceof Junior) developer.resolverBugs()
-            if (developer instanceof Senior) developer.administrarEquipe()
+            if (developer instanceof Pleno) return developer.criarFeature()
+            if (developer instanceof Junior) return developer.resolverBugs()
+            if (developer instanceof Senior) return developer.administrarEquipe()
         }
     }
 

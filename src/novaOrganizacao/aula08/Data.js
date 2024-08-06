@@ -10,6 +10,7 @@ var Data = /** @class */ (function () {
     Data.prototype.compara = function (outraData) {
         if ((this.dia === outraData.dia) && (this.mes === outraData.mes) && (this.ano === outraData.ano)) {
             // As datas são iguais
+            console.log("As datas são iguais");
             return 1;
         }
         return -1;
@@ -25,7 +26,10 @@ var Data = /** @class */ (function () {
     };
     Data.prototype.getMesExtenso = function () {
         var mes = ['janeiro', 'fevereito', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
-        return "".concat(this.dia, " de ").concat(mes[this.mes - 1], " de ").concat(this.ano);
+        return mes[this.mes - 1];
+    };
+    Data.prototype.getDataExtenso = function () {
+        return "".concat(this.dia, " de ").concat(this.getMesExtenso(), " de ").concat(this.ano);
     };
     Data.prototype.isBissexto = function () {
         if (this.ano % 4 !== 0) {

@@ -31,7 +31,9 @@ export class Gabarito {
         this.pesos = []
         this.respostasCorretas = []
     }
-
+    public getGabarito(): string {
+        return `${this.respostasCorretas}`
+    }
     public addResposta(respostaCorreta: string, valor: number): void {
         this.pesos.push(valor)
         this.respostasCorretas.push(respostaCorreta) 
@@ -53,7 +55,10 @@ export class Prova implements Prova {
         this.respostasAluno = []
         this.gabarito = gabarito
     }
-    
+    public getRespostasAluno(): string {
+        return `${this.respostasAluno}`
+    }
+
     public respostaAluno(resposta: string): void {
         this.respostasAluno.push(resposta)
     }
@@ -65,10 +70,13 @@ export class Prova implements Prova {
                 nota += this.gabarito.pesos[i]
             }
         }
-        console.log("O aluno conseguiu " + nota + "pontos")
+        console.log("O aluno conseguiu " + nota + " pontos")
         return nota
     }
 
+    public getTamanhoProva() : number {
+        return this.gabarito.respostasCorretas.length
+    }
     public acertos(): number {
         let acertos = 0 
         for (let i = 0; i < this.gabarito.respostasCorretas.length; i++) {

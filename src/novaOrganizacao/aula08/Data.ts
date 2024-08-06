@@ -1,5 +1,5 @@
 export interface Data {
-    // constructor(dia: number, mes: number, ano: number);
+    //constructor(dia: number, mes: number, ano: number);
     compara(outraData: Data): number;
     getDia(): number;
     getMes(): number;
@@ -23,6 +23,7 @@ export class Data implements Data {
     public compara(outraData: Data): number {
         if ((this.dia  === outraData.dia ) && (this.mes  === outraData.mes) && (this.ano === outraData.ano)) {
             // As datas são iguais
+            console.log("As datas são iguais")
             return 1
         }
         return -1;
@@ -38,7 +39,10 @@ export class Data implements Data {
     }
     public getMesExtenso(): string {
         const mes = ['janeiro','fevereito','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro']
-        return `${this.dia} de ${mes[this.mes - 1]} de ${this.ano}`;
+        return mes[this.mes - 1];
+    }
+    public getDataExtenso(): string {
+        return `${this.dia} de ${this.getMesExtenso()} de ${this.ano}`;
     }
     public isBissexto(): boolean {
         if (this.ano % 4 !== 0) {
