@@ -38,8 +38,9 @@ export class Voo implements Voo {
         let assentoLivre: number = -1 
         for(let i = 1; i <= 100; i++) {
             if (this.cadeiras[i] !== i) {
-                    console.log(`O assento ${i} está livre`)
+                    console.log(`O assento ${i} é o próximo livre.`)
                     assentoLivre = i
+                    break
             } 
         }
         return assentoLivre;

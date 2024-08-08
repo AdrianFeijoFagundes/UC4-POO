@@ -3,19 +3,23 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Voo = void 0;
 var Voo = /** @class */ (function () {
+    //private passageiros: boolean[]
     function Voo(numeroVoo, data) {
         this.numeroVoo = numeroVoo;
         this.cadeiras = [];
         this.data = data;
+        // this.passageiros = new Array(100).fill(false);
     }
     Voo.prototype.proximoLivre = function () {
-        for (var i = 0; i < 101; i++) {
-            if (this.cadeiras[i] !== i + 1) {
-                console.log("O assento ".concat(i + 1, " est\u00E1 livre"));
-                return i + 1;
+        var assentoLivre = -1;
+        for (var i = 1; i <= 100; i++) {
+            if (this.cadeiras[i] !== i) {
+                console.log("O assento ".concat(i, " \u00E9 o pr\u00F3ximo livre."));
+                assentoLivre = i;
+                break;
             }
         }
-        return -1;
+        return assentoLivre;
     };
     Voo.prototype.verifica = function (cadeira) {
         if (this.cadeiras.indexOf(cadeira) === -1) {
