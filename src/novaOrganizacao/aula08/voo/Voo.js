@@ -37,6 +37,7 @@ var Voo = /** @class */ (function () {
             if (this.verifica(cadeira)) {
                 this.cadeiras.push(cadeira);
                 this.cadeiras.sort();
+                console.log(cadeira + " foi escolhida");
                 return true;
             }
             else {

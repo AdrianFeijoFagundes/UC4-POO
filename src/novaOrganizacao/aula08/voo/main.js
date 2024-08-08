@@ -18,11 +18,15 @@ function menuApp() {
         console.clear();
         switch (choose) {
             case 1:
+                console.log("Qual assento voce deseja escolher?");
+                var ocupa = readLineSync.questionInt();
+                voo.ocupa(ocupa);
                 break;
             case 2:
                 voo.proximoLivre();
                 break;
             case 3:
+                voo.vagas();
                 break;
             default:
                 option = false;

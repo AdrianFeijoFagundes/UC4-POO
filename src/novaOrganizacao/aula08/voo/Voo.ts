@@ -61,6 +61,7 @@ export class Voo implements Voo {
             if (this.verifica(cadeira)) {
                 this.cadeiras.push(cadeira)
                 this.cadeiras.sort()
+                console.log(cadeira + " foi escolhida")
                 return true
             } else {
                 return false
