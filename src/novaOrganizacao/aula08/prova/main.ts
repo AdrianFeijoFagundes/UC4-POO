@@ -1,3 +1,4 @@
+import * as readLineSync from 'readline-sync';
 import { Data } from "../voo/Data";
 import { Prova } from "./Prova";
 import { Gabarito } from "./Prova";
@@ -36,17 +37,10 @@ respoderProva(prova2);
 console.log('GABARITO:')
 console.log(gabaritoAleatorio.getGabarito())
 
-console.log('Prova 1:')
-console.log(prova.getRespostasAluno())
-console.log('Acertos:')
-console.log(prova.acertos())
-console.log('Nota:')
-console.log(prova.nota())
-console.log('Prova 2:')
-console.log(prova2.getRespostasAluno())
-console.log('Acertos:')
-console.log(prova2.acertos())
-console.log('Nota:')
-console.log(prova2.nota())
+function menuApp() {
+    let option:boolean = true;
 
-console.log(prova.maior(prova2))
+    while(option) {
+        
+    }
+}
