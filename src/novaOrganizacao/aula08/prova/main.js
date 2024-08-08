@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Data_1 = require("./Data");
 var Voo_1 = require("./Voo");
-var Aluno_1 = require("./Aluno");
+var Aluno_1 = require("../aluno/Aluno");
 var Prova_1 = require("./Prova");
 var Prova_2 = require("./Prova");
 var datateste = new Data_1.Data(1, 12, 2002);

@@ -25,22 +25,26 @@ export class Voo implements Voo {
     private numeroVoo: string;
     private cadeiras: number[];
     private data: Data;
+    //private passageiros: boolean[]
 
     constructor(numeroVoo: string, data: Data) {
         this.numeroVoo = numeroVoo
         this.cadeiras = []
         this.data = data
+        // this.passageiros = new Array(100).fill(false);
     }
 
     public proximoLivre(): number {
+        let assentoLivre: number = -1 
         for(let i = 1; i <= 100; i++) {
             if (this.cadeiras[i] !== i) {
-                console.log(`O assento ${i} está livre`)
-                return i
-            }
-        }      
-        return -1    
+                    console.log(`O assento ${i} está livre`)
+                    assentoLivre = i
+            } 
+        }
+        return assentoLivre;
     }
+    
     public verifica(cadeira: number): boolean {
         if(this.cadeiras.indexOf(cadeira) === -1) { 
             console.log("A cadeira ", cadeira, "está livre")

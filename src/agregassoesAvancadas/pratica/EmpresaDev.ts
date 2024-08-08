@@ -18,6 +18,10 @@ export class EmpresaDev {
             if (developer instanceof Senior) return developer.administrarEquipe()
         }
     }
-
+    public addDev(dev: Junior | Pleno | Senior ) {
+        this.team.push(dev);
+    } 
 };
+
+
 

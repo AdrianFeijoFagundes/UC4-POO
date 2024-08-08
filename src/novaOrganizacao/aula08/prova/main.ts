@@ -1,18 +1,8 @@
-import { Data } from "./Data";
-import { Voo } from "./Voo";
-import { Aluno } from "./Aluno";
+import { Data } from "../voo/Data";
 import { Prova } from "./Prova";
 import { Gabarito } from "./Prova";
 const datateste = new Data(1,12,2002)
-const voo = new Voo('01', datateste)
-const aluno = new Aluno(1, 'Adrian', 10, 8, 6)
 
-
-// Escreva uma classe Prova em que cada objeto representa uma prova mágica feita
-// por um aluno. Esta prova possui 15 questões de múltipla escolha (letras A a E). As
-// 10 primeiras questões valem 0,5 ponto e as 5 últimas questões valem 1 ponto. Esta
-// classe deverá controlar as questões respondidas pelo aluno. Para isto, a classe
-// deve implementar os métodos:
 
 
 function gerarResposta(): string {
@@ -60,18 +50,3 @@ console.log('Nota:')
 console.log(prova2.nota())
 
 console.log(prova.maior(prova2))
-
-// TESTE VOO
-// voo.ocupa(100)
-// voo.ocupa(87);
-// voo.ocupa(11);
-// voo.ocupa(1);
-// console.log(voo)
-// console.log('------')
-// console.log(voo.verifica(99))
-// console.log('------')
-// console.log(voo.verifica(1))
-// console.log('------')
-// console.log(voo.vagas())
-// console.log('------')
-// console.log(voo.proximoLivre())
