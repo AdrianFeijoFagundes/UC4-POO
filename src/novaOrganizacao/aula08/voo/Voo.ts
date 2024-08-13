@@ -36,12 +36,18 @@ export class Voo implements Voo {
 
     public proximoLivre(): number {
         let assentoLivre: number = -1 
-        for(let i = 1; i <= 100; i++) {
-            if (this.cadeiras[i] !== i) {
-                    console.log(`O assento ${i} é o próximo livre.`)
-                    assentoLivre = i
-                    break
-            } 
+        if (this.cadeiras.length === 0) {
+            console.log(`O assento 1 é o próximo livre.`)
+
+            return 1
+        }
+        for(let i = 1; i <= 99; i++) {
+            if (this.cadeiras[i] - 1 !== i ) {
+                
+                assentoLivre = i + 1
+                console.log(`O assento ${assentoLivre} é o próximo livre.`)
+                break
+            }
         }
         return assentoLivre;
     }

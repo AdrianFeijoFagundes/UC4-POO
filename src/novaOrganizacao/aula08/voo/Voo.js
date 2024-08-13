@@ -12,10 +12,14 @@ var Voo = /** @class */ (function () {
     }
     Voo.prototype.proximoLivre = function () {
         var assentoLivre = -1;
-        for (var i = 1; i <= 100; i++) {
-            if (this.cadeiras[i] !== i) {
-                console.log("O assento ".concat(i, " \u00E9 o pr\u00F3ximo livre."));
-                assentoLivre = i;
+        if (this.cadeiras.length === 0) {
+            console.log("O assento 1 \u00E9 o pr\u00F3ximo livre.");
+            return 1;
+        }
+        for (var i = 1; i <= 99; i++) {
+            if (this.cadeiras[i] - 1 !== i) {
+                assentoLivre = i + 1;
+                console.log("O assento ".concat(assentoLivre, " \u00E9 o pr\u00F3ximo livre."));
                 break;
             }
         }
