@@ -46,7 +46,8 @@ c) Método `somar(outroComplexo: NumeroComplexo): NumeroComplexo` que recebe out
 
 d) Método `subtrair(outroComplexo: NumeroComplexo): NumeroComplexo` que recebe outro número complexo e o subtrai do número complexo atual. (a+bi) - (c+di) = (a-c) + (b-d)i
 
-e) Método `multiplicar(outroComplexo: NumeroComplexo): NumeroComplexo` que recebe outro número complexo e o multiplica ao número complexo atual. (a+bi) * (c+di) = (ac - bd) + (ad + bc)i
+e) Método `multiplicar(outroComplexo: NumeroComplexo): NumeroComplexo` que recebe outro número complexo e o multiplica ao número complexo atual.
+ (a+bi) * (c+di) = (ac - bd) + (ad + bc)i
 
 f) Método `dividir(outroComplexo: NumeroComplexo): NumeroComplexo` que recebe outro número complexo e o divide pelo número complexo atual. (a+bi) / (c+di) = (ac + bd) / (c² + d²) + (bc - ad) / (c² + d²)i
 

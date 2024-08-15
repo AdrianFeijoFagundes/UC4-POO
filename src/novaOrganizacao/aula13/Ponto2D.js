@@ -37,7 +37,7 @@ var Ponto2D = /** @class */ (function () {
         this.x = x;
         this.y = y;
     };
-    Ponto2D.prototype.setByPoint = function (outroPonto) {
+    Ponto2D.prototype.copiando = function (outroPonto) {
         this.x = outroPonto.getX();
         this.y = outroPonto.getY();
     };

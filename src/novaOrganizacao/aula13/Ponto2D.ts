@@ -23,7 +23,7 @@ export class Ponto2D {
         this.x = x;
         this.y = y;
     }
-    public setByPoint(outroPonto: Ponto2D) {
+    public copiando(outroPonto: Ponto2D) {
         this.x = outroPonto.getX();
         this.y = outroPonto.getY();   
     }
