@@ -5,6 +5,9 @@ var Contador = /** @class */ (function () {
     function Contador() {
         this.cont = 0;
     }
+    Contador.prototype.setCont = function (cont) {
+        this.cont = cont;
+    };
     Contador.prototype.zerar = function () {
         this.cont = 0;
     };
