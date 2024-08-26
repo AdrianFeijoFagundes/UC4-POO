@@ -4,15 +4,11 @@ import { Ponto2D, PontoEx, PontoXY } from "./Ponto2D";
 import * as readLineSync from 'readline-sync';
 
 import * as fs from 'fs'
-// console.log(contador)
-
 
 function salvarContador(cont: number): void {
     const data = [{number: cont}]
     fs.writeFileSync('./data/cont.json', JSON.stringify(data), 'utf-8')
 }
-
-
 function menuContador() {
     const dbContador = JSON.parse(fs.readFileSync('./data/cont.json', 'utf-8'));
 
@@ -124,39 +120,78 @@ function menuPonto2D() {
 
     }
 }
+function funNumeroComplexo(){
+    let number1 = new NumeroComplexo(10, 5)
+    let number2 = new NumeroComplexo(20, 10)
+ 
+    //Usar return
+    while(true){
+        console.log(`
+        ------------- MENU 3 -----------------------
+          N1: ${number1.toString()} / N2: ${number2.toString()}
+        --------------------------------------------
+        1. Somar
+        2. Substrair
+        3. Multiplicacao
+        4. Divisao
+        5. Modulo
+        6. Setar Real e Imaginario do N1
+        7. Setar Real e Imaginario do N2
+        8. Voltar
+        --------------------------------------------
+        `)
+        let userOption = readLineSync.question("Qual desejas Sr. ? ")
+ 
+        console.clear()
+        switch(userOption){
+            case '1':
+                let number3 = number1.somar(number2)
+                console.log(`Soma: ${number3.toString()}`)
+                break
+           
+            case '2':
+                let number4 = number1.subtrair(number2)
+                console.log(`Subtrair: ${number4.toString()}`)
+                break
+ 
+            case '3':
+                let number5 = number1.multiplicar(number2)
+                console.log(`Multiplicação: ${number5.toString()}`)
+                break
+ 
+            case '4':
+                let number6 = number1.dividir(number2)
+                console.log(`Divisao: ${number6.toString()}`)
+                break
+ 
+            case '5':
+                console.log(`
+                Modulo do Numero 1: ${number1.modulo()}
+                Modulo do Numero 2: ${number2.modulo()}
+                `)
+                break
+ 
+            case '6':
+                number1.setParteReal(readLineSync.questionInt('Qual a parte real? '))
+                number1.setParteImaginario(readLineSync.questionInt('Qual a parte imaginaria? '))
+                break
+           
+            case '7':
+                number2.setParteReal(readLineSync.questionInt('Qual a parte real? '))
+                number2.setParteImaginario(readLineSync.questionInt('Qual a parte imaginaria? '))
+                break
+ 
+            case '8':
+                return
+                break
+           
+            default:
+                readLineSync.question('Escolha uma opcao valida!')
+                console.clear()
+                break
+        }
+    }
+}
 menuPonto2D()
 menuContador()
-// const pA = new Ponto2D();
-// const pB = new PontoXY(30,40);
-// const pC = new PontoEx(pB);
-
-// console.log("Ponto A")
-// pA.setCoordenades(10,15)
-// console.log(pA.toString())
-// console.log("Ponto B")
-// console.log(pB.toString())
-// console.log("Ponto C")
-// console.log(pC.toString())
-
-// console.log("O ponto B é igual ao ponto C?", pB.equals(pC))
-// console.log("A distancia entre o ponto A e o ponto B: ", pA.distancia(pB))
-
-
-// const numero = new NumeroComplexo(10,5);
-// const numero2 = new NumeroComplexo(20,10);
-
-// console.log("numero 1:")
-// console.log(numero.toString())
-// console.log("numero 2:")
-// console.log(numero2.toString())
-
-// const numero3 = numero.somar(numero2)
-// console.log("soma: ", numero3.toString())
-// const numero4 = numero.subtrair(numero2)
-// console.log("subtrair: ", numero4.toString())
-// const numero5 = numero.multiplicar(numero2)
-// console.log("multiplicar: ", numero5.toString())
-// const numero6 = numero.dividir(numero2)
-// console.log("dividir: ", numero6.toString())
-
-// console.log("modulo numero 1: ", numero.modulo())
+funNumeroComplexo()

@@ -45,7 +45,7 @@ export class Ponto2D {
     public distancia(outroPonto: Ponto2D): number {
         let x = outroPonto.getX() - this.x
         let y = outroPonto.getY() - this.y
-        let z = (x * x) + (y * y)
+        let z = (x**2) + (y**2)
         let distancia = z * (z / 2)
         return distancia
     }

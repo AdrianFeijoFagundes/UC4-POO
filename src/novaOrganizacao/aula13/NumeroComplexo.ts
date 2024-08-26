@@ -6,21 +6,18 @@ export class NumeroComplexo {
         this.parteReal = parteReal;
         this.parteImaginario = parteImaginario;
     }
-
     public getParteReal(): number {
         return this.parteReal;
     }
     public setParteReal(parteReal: number): void {
         this.parteReal = parteReal
     }
-
     public getParteImaginario(): number {
         return this.parteImaginario;
     }
     public setParteImaginario(parteImaginario: number): void {
-        this.parteReal = parteImaginario;
+        this.parteImaginario = parteImaginario;
     }
-
     public somar(outroComplexo: NumeroComplexo): NumeroComplexo {
         let real = this.parteReal + outroComplexo.getParteReal();
         let imaginario = this.parteImaginario + outroComplexo.getParteImaginario();
@@ -38,7 +35,7 @@ export class NumeroComplexo {
     }
     public dividir(outroComplexo: NumeroComplexo): NumeroComplexo {
 
-        let partePotenciacao = (outroComplexo.getParteReal() * outroComplexo.getParteReal()) + (outroComplexo.getParteImaginario() * outroComplexo.getParteImaginario());
+        let partePotenciacao = (outroComplexo.getParteReal()**2) + (outroComplexo.getParteImaginario()**2);
 
         let real = ((this.parteReal * outroComplexo.getParteReal()) + (this.parteImaginario * outroComplexo.getParteImaginario())) / partePotenciacao;
 
@@ -54,12 +51,4 @@ export class NumeroComplexo {
     public toString(): string {
         return this.parteReal + " + " + this.parteImaginario + "i"
     }
-
 }
-
-
-/*
-
-
-*/ 
-

@@ -16,7 +16,7 @@ var NumeroComplexo = /** @class */ (function () {
         return this.parteImaginario;
     };
     NumeroComplexo.prototype.setParteImaginario = function (parteImaginario) {
-        this.parteReal = parteImaginario;
+        this.parteImaginario = parteImaginario;
     };
     NumeroComplexo.prototype.somar = function (outroComplexo) {
         var real = this.parteReal + outroComplexo.getParteReal();
@@ -34,7 +34,7 @@ var NumeroComplexo = /** @class */ (function () {
         return new NumeroComplexo(real, imaginario);
     };
     NumeroComplexo.prototype.dividir = function (outroComplexo) {
-        var partePotenciacao = (outroComplexo.getParteReal() * outroComplexo.getParteReal()) + (outroComplexo.getParteImaginario() * outroComplexo.getParteImaginario());
+        var partePotenciacao = (Math.pow(outroComplexo.getParteReal(), 2)) + (Math.pow(outroComplexo.getParteImaginario(), 2));
         var real = ((this.parteReal * outroComplexo.getParteReal()) + (this.parteImaginario * outroComplexo.getParteImaginario())) / partePotenciacao;
         var imaginario = ((this.parteImaginario * outroComplexo.getParteReal()) - (this.parteReal * outroComplexo.getParteImaginario())) / partePotenciacao;
         return new NumeroComplexo(real, imaginario);

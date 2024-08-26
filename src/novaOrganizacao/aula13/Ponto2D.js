@@ -60,7 +60,7 @@ var Ponto2D = /** @class */ (function () {
     Ponto2D.prototype.distancia = function (outroPonto) {
         var x = outroPonto.getX() - this.x;
         var y = outroPonto.getY() - this.y;
-        var z = (x * x) + (y * y);
+        var z = (Math.pow(x, 2)) + (Math.pow(y, 2));
         var distancia = z * (z / 2);
         return distancia;
     };
