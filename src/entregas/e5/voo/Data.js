@@ -1,6 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Data = void 0;
 var Data = /** @class */ (function () {
     function Data(dia, mes, ano) {
         this.dia = dia;
@@ -47,4 +44,4 @@ var Data = /** @class */ (function () {
     };
     return Data;
 }());
-exports.Data = Data;
+export { Data };

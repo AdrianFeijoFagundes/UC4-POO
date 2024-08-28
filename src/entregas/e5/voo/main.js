@@ -1,9 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var readLineSync = require("readline-sync");
-var Voo_1 = require("./Voo");
-var Data_1 = require("./Data");
-var voo = new Voo_1.Voo('A29', new Data_1.Data(14, 8, 2024));
+import * as readLineSync from 'readline-sync';
+import { Voo } from './Voo';
+import { Data } from './Data';
+var voo = new Voo('A29', new Data(14, 8, 2024));
 /*
     banco de dados dos voos
     selecionar voo para comprar passagem

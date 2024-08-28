@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Aluno = void 0;
-var readLineSync = require("readline-sync");
+import * as readLineSync from 'readline-sync';
 var Aluno = /** @class */ (function () {
     function Aluno(matricula, nome, notaProva1, notaProva2, notaTrabalho) {
         this.matricula = matricula;
@@ -28,4 +25,4 @@ var Aluno = /** @class */ (function () {
     };
     return Aluno;
 }());
-exports.Aluno = Aluno;
+export { Aluno };

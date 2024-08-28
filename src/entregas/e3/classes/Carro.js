@@ -1,6 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Carro = void 0;
 var Carro = /** @class */ (function () {
     function Carro(modelo, kmPorLitro, maxGasolina) {
         this.modelo = modelo;
@@ -32,4 +29,4 @@ var Carro = /** @class */ (function () {
     };
     return Carro;
 }());
-exports.Carro = Carro;
+export { Carro };

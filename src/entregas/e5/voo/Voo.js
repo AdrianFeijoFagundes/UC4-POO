@@ -1,7 +1,4 @@
-"use strict";
 // ### Questão 3 - Vôos Encantados
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Voo = void 0;
 var Voo = /** @class */ (function () {
     //private passageiros: boolean[]
     function Voo(numeroVoo, data) {
@@ -71,4 +68,4 @@ var Voo = /** @class */ (function () {
     };
     return Voo;
 }());
-exports.Voo = Voo;
+export { Voo };

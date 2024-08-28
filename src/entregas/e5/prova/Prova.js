@@ -1,11 +1,8 @@
-"use strict";
 // Escreva uma classe Prova em que cada objeto representa uma prova mágica feita
 // por um aluno. Esta prova possui 15 questões de múltipla escolha (letras A a E). As
 // 10 primeiras questões valem 0,5 ponto e as 5 últimas questões valem 1 ponto. Esta
 // classe deverá controlar as questões respondidas pelo aluno. Para isto, a classe
 // deve implementar os métodos:
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Prova = exports.Gabarito = void 0;
 // ```typescript
 // ```
 // Como posso fazer a questão 4?
@@ -32,7 +29,7 @@ var Gabarito = /** @class */ (function () {
     };
     return Gabarito;
 }());
-exports.Gabarito = Gabarito;
+export { Gabarito };
 var Prova = /** @class */ (function () {
     function Prova(gabarito) {
         this.respostasAluno = [];
@@ -78,4 +75,4 @@ var Prova = /** @class */ (function () {
     };
     return Prova;
 }());
-exports.Prova = Prova;
+export { Prova };
