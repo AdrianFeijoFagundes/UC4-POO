@@ -60,7 +60,7 @@ export class JogoEletronico extends Jogo implements Info {
             return `
                 Titulo: ${this.getTitle()} 
                 Genero: ${this.getGenero()}
-                Classificação etária: ${this.getClassificacao}
+                Classificação etária: ${this.getClassificacao()}
                 Plataforma: ${this.plataforma}
             `;
         } catch (error) {
@@ -81,8 +81,8 @@ export class JogoDeTabuleiro extends Jogo implements Info{
         try {
             return `
                 Titulo: ${this.getTitle()} 
-                Genero: ${this.getGenero}
-                Classificação etária: ${this.getClassificacao}
+                Genero: ${this.getGenero()}
+                Classificação etária: ${this.getClassificacao()}
                 Número de Jogadores: ${this.numeroDeJogadores}
             `;
         } catch (error) {
