@@ -1,5 +1,6 @@
 import * as readLineSync from 'readline-sync';
-import { Carro } from "./classes/Carro";
+import { Carro } from './classes/Carro';
+
 
 const garagem: Array<Carro> = [
     new Carro('Uno', 10, 50),

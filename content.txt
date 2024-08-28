@@ -10,4 +10,22 @@ NUMBER E STRING - tipagens genéricas
 INT e FLOAT - tipagem Númerica Primitiva
 STRING, CHAR, VARCHAR - tipagens primitivas de texto
 
+npm install typescript --save-dev // opcional
+npm install readline-sync
+npm install @types/readline-sync --save-dev
+npm install -D typescript @types/node
+npx tsc --outDir ./dist
 
+
+exportando uma classe:
+
+    export class NomeClasse {
+
+    }
+
+importando uma classe:
+
+    import {NomeClasse} from "./NomeClasse";
+
+
+Interface -> Contrato

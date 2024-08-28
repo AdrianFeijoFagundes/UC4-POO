@@ -7,10 +7,10 @@ import * as fs from 'fs'
 
 function salvarContador(cont: number): void {
     const data = [{number: cont}]
-    fs.writeFileSync('./data/cont.json', JSON.stringify(data), 'utf-8')
+    fs.writeFileSync('../data/cont.json', JSON.stringify(data), 'utf-8')
 }
 function menuContador() {
-    const dbContador = JSON.parse(fs.readFileSync('./data/cont.json', 'utf-8'));
+    const dbContador = JSON.parse(fs.readFileSync('../data/cont.json', 'utf-8'));
 
     const cont = new Contador()
     const valor = dbContador[0].number || 0
@@ -53,12 +53,12 @@ function salvarPonto2D(ponto1: Ponto2D, ponto2: Ponto2D):void {
         y: ponto2.getY()
     }
     ]
-    fs.writeFileSync('./data/ponto2d.json', JSON.stringify(data), 'utf-8')
+    fs.writeFileSync('../data/ponto2d.json', JSON.stringify(data), 'utf-8')
 }
 
 function menuPonto2D() {
 
-    const dbPonto2d = JSON.parse(fs.readFileSync('./data/ponto2d.json', 'utf-8')); 
+    const dbPonto2d = JSON.parse(fs.readFileSync('../data/ponto2d.json', 'utf-8')); 
 
     let pontoA = new PontoXY(dbPonto2d[0].x, dbPonto2d[0].y);
     let pontoB = new PontoXY(dbPonto2d[1].x, dbPonto2d[1].y);
@@ -183,8 +183,7 @@ function funNumeroComplexo(){
  
             case '8':
                 return
-                break
-           
+        
             default:
                 readLineSync.question('Escolha uma opcao valida!')
                 console.clear()
