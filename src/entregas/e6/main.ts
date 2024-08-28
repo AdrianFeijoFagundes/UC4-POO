@@ -7,10 +7,10 @@ import * as fs from 'fs'
 
 function salvarContador(cont: number): void {
     const data = [{number: cont}]
-    fs.writeFileSync('../data/cont.json', JSON.stringify(data), 'utf-8')
+    fs.writeFileSync('./data/cont.json', JSON.stringify(data), 'utf-8')
 }
 function menuContador() {
-    const dbContador = JSON.parse(fs.readFileSync('../data/cont.json', 'utf-8'));
+    const dbContador = JSON.parse(fs.readFileSync('./data/cont.json', 'utf-8'));
 
     const cont = new Contador()
     const valor = dbContador[0].number || 0
@@ -53,12 +53,12 @@ function salvarPonto2D(ponto1: Ponto2D, ponto2: Ponto2D):void {
         y: ponto2.getY()
     }
     ]
-    fs.writeFileSync('../data/ponto2d.json', JSON.stringify(data), 'utf-8')
+    fs.writeFileSync('./data/ponto2d.json', JSON.stringify(data), 'utf-8')
 }
 
 function menuPonto2D() {
 
-    const dbPonto2d = JSON.parse(fs.readFileSync('../data/ponto2d.json', 'utf-8')); 
+    const dbPonto2d = JSON.parse(fs.readFileSync('./data/ponto2d.json', 'utf-8')); 
 
     let pontoA = new PontoXY(dbPonto2d[0].x, dbPonto2d[0].y);
     let pontoB = new PontoXY(dbPonto2d[1].x, dbPonto2d[1].y);
@@ -120,7 +120,7 @@ function menuPonto2D() {
 
     }
 }
-function funNumeroComplexo(){
+function menuNumeroComplexo(){
     let number1 = new NumeroComplexo(10, 5)
     let number2 = new NumeroComplexo(20, 10)
  
@@ -137,7 +137,7 @@ function funNumeroComplexo(){
         5. Modulo
         6. Setar Real e Imaginario do N1
         7. Setar Real e Imaginario do N2
-        8. Voltar
+        8. Sair
         --------------------------------------------
         `)
         let userOption = readLineSync.question("Qual desejas Sr. ? ")
@@ -191,6 +191,33 @@ function funNumeroComplexo(){
         }
     }
 }
-menuPonto2D()
-menuContador()
-funNumeroComplexo()
+
+
+
+
+let opt = true
+while (opt) {
+    console.log("----------Menu----------")
+    console.log("1. Usar Contador")
+    console.log("2. Usar Ponto 2d")
+    console.log("3. Usar Número Complexo")
+    console.log("4. Sair")
+    console.log("-----------------------")
+    console.log("Escolha uma opção:")
+    let chose = readLineSync.questionInt()
+    console.clear()
+
+    switch (chose) {
+        case 1:
+            menuContador()
+            break
+        case 2:
+            menuPonto2D()
+            break
+        case 3:
+            menuNumeroComplexo()
+            break
+        case 4:
+            opt = false
+    }
+}
